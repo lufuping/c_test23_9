@@ -32,12 +32,74 @@
 //	printf("%s\n", arr);
 //	return 0;
 //}
+#if 0
 struct S1 {
 	int i;
 	char j;
 	double d;
 };
 int main() {
-	printf("%d",sizeof(struct S1));
+	printf("%d", sizeof(struct S1));
 	return 0;
 }
+#endif
+#if 0
+int main() {
+	char arr[] = "hell oword";
+	int len = strlen(arr);
+	printf("%d\n", len);
+	return 0;
+}
+#endif
+#if 0
+#include<assert.h>
+size_t myStrlen(const char* arr) {
+	assert(arr);
+	size_t len = 0;
+	while (*arr != '\0') {
+		arr++;
+		len++;
+	}
+	return len;
+}
+int main() {
+	char arr[] = "hell oword";
+	size_t len = myStrlen(arr);
+	printf("%u\n", len);
+	return 0;
+}
+#endif
+#if 0
+int main() {
+	char arr[20] = { 0 };
+	strcpy_s(arr, 8, "张三");
+	printf("%s\n", arr);
+	return 0;
+}
+#endif
+#if 1
+char* myStrcpy(char* dest, const char* source) {
+	assert(dest && source);
+	char* res = dest;
+	while (*dest++ = *source++);
+	return res;
+}
+char* myStrcat(char* dest, const char* source) {
+	assert(dest && source);
+	char* res = dest;
+	while (*dest != '\0') {
+		dest++;
+	}
+	while (*dest++ = *source++);
+	return res;
+}
+int main() {
+	char arr[20] = "我";
+	myStrcat(arr,"爱你,亲爱的");
+	//strcpy_s(arr, 8, "张三");
+	//myStrcpy(arr, "张三");
+	//printf("%d\n", sizeof("爱你"));
+	printf("%s\n", arr);
+	return 0;
+}
+#endif
